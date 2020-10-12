@@ -2,6 +2,7 @@ FROM nginx:alpine
 MAINTAINER Paul Ganster <paul@ganster.dev>
 
 WORKDIR /home/app
+RUN apk add python3
 RUN apk add npm
 COPY package.json /home/app/package.json
 COPY package-lock.json /home/app/package-lock.json
