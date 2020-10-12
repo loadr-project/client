@@ -5,18 +5,12 @@ import {Share} from "./Share";
 /*
 TODO:
 - server
-  - password protection..?
+  - check links that aren't working
 - client
   - receive shares (https://www.chromestatus.com/feature/5662315307335680)
     - API doesn't work on Fairphone - does work on smth else
   - optimize for copy/pasting
-- operations
-  - Container auf dockerhub bauen usw.
-    - Github automatisch gibts ein docker github packages repository
-  - Github action auf jeden push wird ein Docker image gebaut und pushed ins docker hub repo
-    - https://github.com/features/packages https://github.com/features/actions
-    - Vorher README aus git history raushauen!!!!
-  - Container lauft nicht - mal schauen.
+  - start download after pasting, use share afterwards (same usability)
  */
 
 interface State {
