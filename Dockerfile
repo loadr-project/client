@@ -1,6 +1,4 @@
-FROM nginx:alpine
-MAINTAINER Paul Ganster <paul@ganster.dev>
-
+FROM alpine AS buildStage
 WORKDIR /build
 
 # Packages
@@ -17,8 +15,8 @@ COPY src /build/src
 COPY tsconfig.json /build/tsconfig.json
 RUN npm run build
 
-# Release & clean up
-RUN rm -rf /usr/share/nginx/html && \
-    mv /build/build /usr/share/nginx/html && \
-    rm -rf /build
+# Release
+FROM nginx:alpine
+RUN rm -rf /usr/share/nginx/html
+COPY --from=buildStage /build/build /usr/share/nginx/html
 
