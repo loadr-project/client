@@ -45,11 +45,12 @@ window.addEventListener('load', () => {
   console.log('Text shared: ' + parsedUrl.searchParams.get('description'));
   console.log('Link shared: ' + parsedUrl.searchParams.get('link'));
   console.log('URL shared: ' + parsedUrl.searchParams.get('url'));
+  /*
   if(parsedUrl.searchParams.get('link') !== null) {
     const share = new Share();
     share.share(parsedUrl.searchParams.get('link'));
   } else if(parsedUrl.searchParams.get('url') !== null) {
     const share = new Share();
     share.share(parsedUrl.searchParams.get('url'));
-  }
+  }*/
 });

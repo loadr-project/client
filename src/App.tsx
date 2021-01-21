@@ -20,6 +20,13 @@ interface State {
 }
 
 export default function App() {
+  // @ts-ignore
+  const parsedUrl = new URL(window.location);
+  console.log('within App - window.location.href' + window.location.href);
+  console.log('within App - title shared: ' + parsedUrl.searchParams.get('title'));
+  console.log('within App - text shared: ' + parsedUrl.searchParams.get('text'));
+  console.log('within App - URL shared: ' + parsedUrl.searchParams.get('url'));
+
   const [state, setState] = useState<State>({
     url: "",
     downloadedFile: null,
