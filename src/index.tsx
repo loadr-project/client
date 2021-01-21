@@ -18,6 +18,25 @@ ReactDOM.render(
 serviceWorker.register();
 
 window.addEventListener('load', () => {
+  // @ts-ignore
+  const parsedUrl = new URL(window.location);
+  console.log('load - window.location.href' + window.location.href);
+  console.log('load - title shared: ' + parsedUrl.searchParams.get('title'));
+  console.log('load - text shared: ' + parsedUrl.searchParams.get('text'));
+  console.log('load - URL shared: ' + parsedUrl.searchParams.get('url'));
+});
+window.addEventListener('DOMContentLoaded', () => {
+  // @ts-ignore
+  const parsedUrl = new URL(window.location);
+  console.log('DOMContentLoaded - window.location.href' + window.location.href);
+  console.log('DOMContentLoaded - title shared: ' + parsedUrl.searchParams.get('title'));
+  console.log('DOMContentLoaded - text shared: ' + parsedUrl.searchParams.get('text'));
+  console.log('DOMContentLoaded - URL shared: ' + parsedUrl.searchParams.get('url'));
+});
+
+
+
+window.addEventListener('load', () => {
   // TODO: this doesn't seem to work??
   // TODO: this should be in component for loading animation etc.
   // @ts-ignore

@@ -25,6 +25,7 @@ export default function App() {
     downloadedFile: null,
     error: null
   });
+
   const [loading, setLoading] = useState(false);
 
   function handleSubmit(event: ChangeEvent<HTMLFormElement>) {
